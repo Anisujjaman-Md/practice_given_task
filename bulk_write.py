@@ -5,8 +5,6 @@ from bson.objectid import ObjectId
 from pprint import pprint
 from pymongo.errors import BulkWriteError
 
-
-
 if __name__ == "__main__":
 
     client = pymongo.MongoClient("mongodb://localhost:27017")
@@ -15,18 +13,20 @@ if __name__ == "__main__":
 
     bulk = [
         UpdateOne({"_id": ObjectId("6305a83d19ef7bceb5ff83e0")}, 
-            {"$set":{   
-                        "brand" : "yamaha",
-                        "model" : "Mt15",
-                        "year" : 2020       
-                    }}),
+            {"$set":
+                {   
+                    "brand" : "yamaha",
+                    "model" : "Mt15",
+                    "year" : 2020       
+                }}),
         
         UpdateOne({"_id": ObjectId("6305a83d19ef7bceb5ff83e3")}, 
-            {"$set":{   
-                        "brand" : "TVS",
-                        "model" : "Apache 4V",
-                        "year" : 2021       
-                    }}),
+            {"$set":
+                {   
+                    "brand" : "TVS",
+                    "model" : "Apache 4V",
+                    "year" : 2021       
+                }}),
 
 
     ]

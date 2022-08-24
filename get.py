@@ -11,8 +11,8 @@ if __name__ == "__main__":
     client = pymongo.MongoClient("mongodb://localhost:27017")
     db = client ['test_db']
     collection = db['car']
-    
+  
     allInfo= collection.find({"brand":"audi"})
-
+    
     for i in allInfo:
         print(i)
