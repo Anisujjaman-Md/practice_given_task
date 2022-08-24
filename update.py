@@ -2,6 +2,7 @@ import collections
 from http import client
 import pymongo
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 if __name__ == "__main__":
 
@@ -9,9 +10,10 @@ if __name__ == "__main__":
 
     client = pymongo.MongoClient("mongodb://localhost:27017")
     db = client ['test_db']
-    collection = db['car information']
+    collection = db['bike']
 
-    prev = {"_id" : "6303434d9cb36b0511f91ee0"}
+    prev= ({"_id" : ObjectId("6305a83d19ef7bceb5ff83e1")})
+    
     new = {"$set":{"brand":"ferari", "model":"F430 Spider"}}
 
     put = collection.update_many(prev,new)
